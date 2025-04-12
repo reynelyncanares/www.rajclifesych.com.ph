@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RAJC LifeSync</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #4c6a92; /* Subtle muted blue */
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+     background-image: url("technology.jpg");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+    }
+
+    /* Add a light transparent overlay for better text readability */
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2); /* Slight darkening */
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      z-index: 2;
+      position: relative;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      z-index: 2;
+      position: relative;
+      font-weight: 300;
+    }
+
+    /* Navbar Styling */
+    #navbar {
+      position: sticky;
+      top: 0;
+      background-color: #34495e; /* Dark gray-blue for a subtle tone */
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      margin: 0;
+    }
+
+    nav a {
+      display: block;
+      color: white;
+      padding: 12px 18px;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background-color: #2c3e50; /* Muted dark gray-blue */
+    }
+
+    /* Main Content */
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* About Section Styling */
+   /* About Section Styling */
+    #about {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+    }
+
+    #about h2 {
+      font-size: 2.2rem;
+      color: #34495e;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    #about h3 {
+      font-size: 1.6rem;
+      color: #2c3e50;
+      margin-top: 20px;
+    }
+
+    #about p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    #about .quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin: 20px 0;
+      color: #2c3e50;
+    }
+
+    #about .goal-list {
+      margin-top: 30px;
+      padding-left: 20px;
+      list-style: disc;
+      color: #555;
+    }
+
+    #about .goal-list li {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .content h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+
+    /* Contact Form */
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      background-color: #4c6a92; /* Matching the header color */
+      color: white;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .contact-form button:hover {
+      background-color: #3a5578; /* Darker blue on hover */
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #2c3e50; /* Darker, subtle gray-blue */
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #3498db; /* Soft blue */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      nav a {
+        padding: 10px 15px;
+      }
+
+      .content h2 {
+        font-size: 2rem;
+      }
+
+      footer {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>RAJC LifeSync</h1>
+    <p>Helping you manage life, one app at a time.</p>
+  </header>
+
+  <div id="navbar">
+    <nav>
+      <a class="active" href="javascript:void(0)" onclick="showHome()">Home</a>
+      <a href="javascript:void(0)" onclick="showAbout()">About</a>
+      <a href="javascript:void(0)" onclick="showContact()">Contact</a>
+    </nav>
+  </div>
+
+  <main id="content">
+    <!-- Home Page Content -->
+    <section class="content" id="home">
+      <h2>Welcome to RAJC LifeSync</h2>
+      <p>Your all-in-one app for managing your daily life. Our mission is to help you stay organized, efficient, and live a balanced life. RAJC LifeSync is a tech startup based in Cebu City, Philippines, focused on developing innovative solutions for everyday problems.</p>
+
+      <!-- Planning Phase Section -->
+      <h3>Planning Phase</h3>
+      <p>The company was conceptualized with the aim of creating an all-in-one life management tool to help Filipinos better organize their time, finances, health, and self-care. Through careful market research and planning, we identified a gap in the market where many individuals were overwhelmed by juggling multiple apps and platforms to manage their daily tasks and goals. Vibely was born out of the need to streamline all essential life tools into one simple, easy-to-use platform.</p>
+
+      <!-- Product/Service Section -->
+      <h3>Product/Service</h3>
+      <p>"Vibely" is designed for every Filipino—whether you're a student juggling schoolwork and part-time gigs, a young professional managing deadlines and fitness goals, or someone looking to improve your daily routines and self-care habits. The app combines task management, budgeting, fitness tracking, and self-care into one platform, so you no longer need to switch between apps. It’s a tool designed to help users stay organized, balanced, and in control of their busy lives.</p>
+
+      <!-- Development Section -->
+      <h3>Development</h3>
+      <p>We developed "Vibely" with the understanding that today’s fast-paced world often leaves people struggling to manage responsibilities and personal wellness. We wanted to create a simple, accessible tool that consolidates essential life management functions into one place. After extensive development, testing, and user feedback, Vibely became the solution for those seeking to streamline their daily activities, with a focus on user-friendliness and efficiency.</p>
+
+      <!-- Registration Section -->
+      <h3>Registration</h3>
+      <p>The company is officially registered as a Limited Liability Company (LLC) with the Securities and Exchange Commission (SEC) of the Philippines. It complies with all necessary local business permits and Philippine digital compliance laws, including the Data Privacy Act of 2012.</p>
+      <ul class="goal-list">
+        <li>Registered with the Bureau of Internal Revenue (BIR) for tax compliance.</li>
+        <li>Complies with all necessary local business permits and licenses obtained through the Cebu City Business Permit and Licensing Office (BPLO).</li>
+        <li>Ensures compliance with local regulations related to taxation, data privacy, and online security.</li>
+      </ul>
+    </section>
+    <!-- About section hidden by default -->
+    <section class="content" id="about" style="display: none;">
+      <h2>Our Mission, Vision, and Goals</h2>
+
+      <!-- Mission -->
+      <div class="quote">
+        <p><strong>Our Mission:</strong><br>
+        To empower Filipinos by making life management easier through simple, innovative, and accessible digital tools. We aim to help people take control of their time, finances, health, and personal growth.</p>
+      </div>
+
+      <!-- Vision -->
+      <div class="quote">
+        <p><strong>Our Vision:</strong><br>
+        To become the <em>leading all-in-one life management app in the Philippines</em>, trusted and loved by Filipinos from all walks of life.</p>
+      </div>
+
+      <!-- Goals -->
+      <div class="quote">
+        <p><strong>Key Goals for Our First Year:</strong></p>
+        <ul class="goal-list">
+          <li>Achieve over 500,000 downloads across Android and iOS platforms in the Philippines</li>
+          <li>Build strong partnerships with local schools, universities, and health and wellness brands</li>
+          <li>Maintain a 4.5-star or higher rating on app stores through excellent user experience and regular updates</li>
+        </ul>
+      </div>
+
+      <p>With Vibely, we aim to make everyday life easier, more organized, and more fulfilling. Whether you want to be more productive, improve your health, manage your money, or simply care for yourself better—Vibely is your all-in-one digital companion.</p>
+
+      <p>RAJC LifeSync was founded in 2020 with the vision of creating a smarter lifestyle for Filipinos. We aim to provide users with personalized tools to manage their routines, tasks, health, and social life all in one app — Vibely. Our goal is to enhance your everyday experience by integrating technology with daily living.</p>
+    </section>
+
+    <!-- Contact section hidden by default -->
+    <section class="content" id="contact" style="display: none;">
+      <h2>Contact Us</h2>
+      <p>If you have any questions or feedback, feel free to reach out to us through the form below, or email us at <strong>contact@rajclifesync.com</strong>.</p>
+      <div class="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 RAJC LifeSync. All rights reserved.</p>
+    <a href="javascript:void(0)">Privacy Policy</a> | <a href="javascript:void(0)">Terms of Service</a>
+  </footer>
+
+  <script>
+    // Function to display the Home section
+    function showHome() {
+      document.getElementById('home').style.display = 'block';
+      document.getElementById('about').style.display = 'none';
+      document.getElementById('contact').style.display = 'none';
+      setActiveLink('home');
+    }
+
+    // Function to display the About section
+    function showAbout() {
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('about').style.display = 'block';
+      document.getElementById('contact').style.display = 'none';
+      setActiveLink('about');
+    }
+
+    // Function to display the Contact section
+    function showContact() {
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('about').style.display = 'none';
+      document.getElementById('contact').style.display = 'block';
+      setActiveLink('contact');
+    }
+
+    // Function to set the active link in the navigation bar
+    function setActiveLink(section) {
+      const links = document.querySelectorAll('nav a');
+      links.forEach(link => {
+        if (link.innerText.toLowerCase() === section) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    // Default view on page load
+    showHome();
+  </script>
+
+</body>
+</html>
